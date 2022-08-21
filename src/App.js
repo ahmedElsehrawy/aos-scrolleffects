@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    Aos.init({ duration: 300 });
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="grids">
+        <div className="boxes">1</div>
+        <div className="boxes">2</div>
+        <div data-aos="fade-up" className="boxes">
+          3
+        </div>
+        <div data-aos="fade-right" className="boxes">
+          4
+        </div>
+        <div data-aos="fade-up" data-aos-duration="3000" className="boxes">
+          5
+        </div>
+        <div className="boxes">5</div>
+      </div>
     </div>
   );
 }
